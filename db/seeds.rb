@@ -25,6 +25,6 @@ pop_array_density.push pop_data_density
 
 i = 0
 while i < 192 do
-		Country.create(name: pop_array_name[0][i].text, pop_density: pop_array_density[0][i].text.to_i)
+		Country.create(name: pop_array_name[0][i].text, pop_density: pop_array_density[0][i].text.gsub(/,/, '').to_i)
 	i += 1
 end
