@@ -30,11 +30,18 @@ circle {
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
+$(function () {
 var width = 1000,
     height = 700;
 
-var vertices = d3.range(95).map(function(d) {
-  return [Math.random() * width, Math.random() * height];
+var vertices;
+
+$('#Country_name').click(function() {
+  range = parseInt($('#Country_name option:selected').data('density'))
+  console.log(range)
+  vertices = d3.range(range).map(function(d) {
+    return [Math.random() * width, Math.random() * height];
+  });
 });
 
 var voronoi = d3.geom.voronoi()
@@ -71,11 +78,25 @@ function redraw() {
 function polygon(d) {
   return "M" + d.join("L") + "Z";
 }
+});
+
+// $(document).ready('change', 'select', function() {
+//   range = $('#Country_name option:selected').data('density')
+//   console.log(range)
+// });
+
+    // $(document).ready(function () {
+    //   $("#Country_name").click(function () {
+    //     var range = $('#Country_name option:selected').data('density')
+    //     console.log(range)
+    //   });
+    // });
 
 </script>
 
 
-<%= select(:Country, :name, Country.all.collect {|p| [ p.name, p.id ] }) %>
+
+<%= select(:Country, :name, Country.all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}) %>
 
 
 </body>
