@@ -39,7 +39,7 @@ var vertices = d3.range(range).map(function(d) {
     return [Math.random() * width, Math.random() * height];
   });
 
-$('#Country_name').click(function() {
+$(document).on('change', 'select', function() {
   range = parseInt($('#Country_name option:selected').data('density'))
   console.log(range)
   vertices = d3.range(range).map(function(d) {
