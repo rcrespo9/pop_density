@@ -35,7 +35,9 @@ var width = 1000,
     height = 700,
     range = 20;
 
-var vertices;
+var vertices = d3.range(range).map(function(d) {
+    return [Math.random() * width, Math.random() * height];
+  });
 
 $('#Country_name').click(function() {
   range = parseInt($('#Country_name option:selected').data('density'))
