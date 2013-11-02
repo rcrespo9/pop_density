@@ -31,11 +31,23 @@ circle {
 <script>
 
 var width = 1000,
-    height = 700;
+    height = 700,
+    range = 30;
 
-var vertices = d3.range(95).map(function(d) {
-  return [Math.random() * width, Math.random() * height];
+var vertices = d3.range(range).map(function(d) {
+    return [Math.random() * width, Math.random() * height];
+  });
+
+$(document).on('change', 'select', function() {
+  range = parseInt($('#Country_name option:selected').data('density'))
+  console.log(range)
+  
+  vertices = d3.range(range).map(function(d) {
+    return [Math.random() * width, Math.random() * height];
+  });
 });
+
+
 
 var voronoi = d3.geom.voronoi()
     .clipExtent([[0, 0], [width, height]]);
@@ -72,10 +84,25 @@ function polygon(d) {
   return "M" + d.join("L") + "Z";
 }
 
+// $('#Country_name option:selected').on('change', function() {
+//   console.log($('#Country_name option:selected').data('density'))
+// });
+
+//  $('#Country_name option:selected').change(function() {
+//   console.log($('#Country_name option:selected').data('density'))
+// });
+
+// var density_range = 20;
+
+// density_range = $('#Country_name option:selected').data('density')
+
+
+
+
 </script>
 
+<%= select(:Country, :name, Country.all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}) %>
 
-<%= select(:Country, :name, Country.all.collect {|p| [ p.name, p.id ] }) %>
 
 
 </body>
