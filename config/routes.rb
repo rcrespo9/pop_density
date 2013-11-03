@@ -1,6 +1,6 @@
 PopDensity::Application.routes.draw do
  
-  root 'countries#index'
+  root 'home#index'
 
   get '/countries' => 'countries#index'
 
