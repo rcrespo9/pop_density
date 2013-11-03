@@ -15,10 +15,10 @@ circle {
   pointer-events: none;
 }
 
-.q0-9 { fill: rgb(128,128,0); }
-.q1-9 { fill: rgb(128,0,0); }
-.q2-9 { fill: rgb(255,140,0); }
-.q3-9 { fill: rgb(238,232,170); }
+.q0-9 { fill: #FFAB00; }
+.q1-9 { fill: #74230d; }
+.q2-9 { fill: #E3C843; }
+.q3-9 { fill: #554E2A; }
 .q4-9 { fill: rgb(70,130,180); }
 .q5-9 { fill: rgb(230,245,208); }
 .q6-9 { fill: rgb(184,225,134); }
@@ -27,6 +27,9 @@ circle {
 
 </style>
 <body>
+
+  <%= select(:Country, :name, Country.all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}) %>
+  
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -36,7 +39,6 @@ $(function () {
       range = 100;
 
   $(document).on('change', 'select', function() {
-    // $('body').remove()
    d3.select("svg").remove();
 
     var vertices = d3.range(range).map(function(d) {
@@ -50,7 +52,7 @@ $(function () {
       });
 
     var voronoi = d3.geom.voronoi()
-        .clipExtent([[0, 0], [width, height]]);
+        .clipExtent([[2, 2], [width, height]]);
 
     var svg = d3.select("body").append("svg")
         .attr("width", width)
@@ -92,7 +94,7 @@ $(function () {
 
 </script>
 
-<%= select(:Country, :name, Country.all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}) %>
+
 
 
 </body>
