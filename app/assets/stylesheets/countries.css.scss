@@ -1,3 +1,80 @@
-// Place all the styles related to the countries controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#countries {
+	overflow: hidden;
+
+	#tessellation {
+	  float: left;
+	  margin: 0 auto;
+
+	path {
+  	  stroke: #fff;
+	}
+
+	path:first-child {
+  	  fill: yellow !important;
+	}
+
+	circle {
+  	  fill: #000;
+      pointer-events: none;
+	}
+
+	.q0-9 { fill: rgb(128,128,0); }
+	.q1-9 { fill: rgb(128,0,0); }
+	.q2-9 { fill: rgb(255,140,0); }
+	.q3-9 { fill: rgb(238,232,170); }
+	.q4-9 { fill: rgb(70,130,180); }
+	.q5-9 { fill: rgb(230,245,208); }
+	.q6-9 { fill: rgb(184,225,134); }
+	.q7-9 { fill: rgb(127,188,65); }
+	.q8-9 { fill: rgb(77,146,33); }
+	}
+
+	#selectbox {
+	  padding: 10px;
+	  background-color: #eee;
+	  border: 1px solid #ddd;
+	  position: relative;
+	  -webkit-border-radius: 2px;
+	  -moz-border-radius: 2px;
+	  -o-border-radius: 2px;
+	  border-radius: 2px;
+	  width: 200px;
+	  float: right;
+	  margin-right: 10px;
+	}
+
+	#country_text {
+		text-transform: italic;
+	}
+
+	.ui-autocomplete {
+	  padding: 0;
+	  list-style: none;
+	  background-color: #fff;
+	  width: 218px;
+	  border: 1px solid #B0BECA;
+	  max-height: 350px;
+	  overflow-y: scroll;
+	}
+
+    .ui-autocomplete .ui-menu-item a {
+	  border-top: 1px solid #B0BECA;
+	  display: block;
+	  padding: 4px 6px;
+	  color: #353D44;
+	  cursor: pointer;
+	}
+    
+	.ui-autocomplete .ui-menu-item:first-child a {
+ 	  border-top: none;
+	}
+
+	.ui-autocomplete .ui-menu-item a.ui-state-hover {
+      background-color: #D5E5F4;
+      color: #161A1C;
+	}
+}
+
+
+

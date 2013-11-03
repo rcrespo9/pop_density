@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.auto-complete
 //= require turbolinks
+//= d3
+//= require voronoi_tessellation
+//= require select_to_auto_complete
 //= require_tree .
