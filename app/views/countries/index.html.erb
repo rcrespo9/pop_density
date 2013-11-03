@@ -1,4 +1,15 @@
 <body id="countries">
+	<!-- our backbone scripts -->
+	<script id="app-view-template" type="text/x-handlebars-template">
+	    <h1>Country info</h1>
+	    <ul id="country"></ul>
+  	</script>
+
+  	<script id="country-info-view-template" type="text/x-handlebars-template">
+	      {{name}}
+	      // {{pop_density}}}
+  	</script>
+
   <div class="container">
 
   	  <!-- d3 visualization -->
@@ -6,11 +17,17 @@
 	  <!-- d3 visualization end -->
 
 
-</body>
-	  <div id="selectbox">
-	  	<%= select(:Country, :name, Country.order_by("name ASC").all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}, prompt: 'Type Country') %>
-	  </div>
-  </div>	  
+	</body>
+
+
+		  <div id="selectbox">
+		  	<%= select(:Country, :name, Country.order_by("name ASC").all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}, prompt: 'Type Country') %>
+		  </div>	
+			
+			<!-- our backbone el -->
+		  <div id="country_info"></div>  
+
+</div>
 
 <!-- selectbox search field -->
 <script>
@@ -25,9 +42,6 @@
 	})(jQuery);
 </script>
 <!-- selectbox search field end-->
-
-
-
 
 
 
