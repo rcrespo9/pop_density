@@ -11,7 +11,6 @@
 	  	<%= select(:Country, :name, Country.order_by("name ASC").all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}, prompt: 'Type Country') %>
 	  </div>
   </div>	  
-</body>
 
 <!-- selectbox search field -->
 <script>
