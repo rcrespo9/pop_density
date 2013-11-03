@@ -92,7 +92,7 @@ $(function () {
 
 </script>
 
-<%= select(:Country, :name, Country.all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}) %>
+<%= select(:Country, :name, Country.order_by("name ASC").all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}, prompt: 'Select Country') %>
 
 
 </body>

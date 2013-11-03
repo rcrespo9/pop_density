@@ -1,0 +1,46 @@
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400);
+
+$header-font: 'Fjalla One', sans-serif;
+$marketing-font: Cantarell, sans-serif;
+$color: #F1EFCE;
+
+#landing-page {
+   background: url(monaco.jpg) center center fixed no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.introduction {
+  color: $color;
+  width: 600px;
+  text-align: left;
+  text-transform: uppercase;
+
+
+	.app-name {
+	  font-family: $header-font;	
+	  font-size: 60px;	  
+	}
+
+	.lead {
+	  font-family: $marketing-font;
+	  font-size: 20px;
+	  font-weight: bold;
+	  margin-top: -5%;
+	}
+
+	.countries-link {
+	  margin-top: 5%;
+
+	#start-now {
+	  font-size: 14px;
+	  font-family: $marketing-font;
+	  text-decoration: none;
+	  color: $color;
+	  background-color: #DA7753; 
+	  padding: .75em;
+	  }
+	}
+}
