@@ -1,5 +1,15 @@
+
+
+ENV['MONGOLAB_URI'] = ds053681.mongolab.com:97321
+
 production:
-  uri: <%= ENV['MONGOHQ_URL'] %>
+  sessions:
+    default:
+      hosts: 
+        <%= ENV['MONGOLAB_URI'] %>
+      database: testapp_production
+      username: testappuser
+      password: testpassword
 # development:
 #   # Configure available database sessions. (required)
 #   sessions:
