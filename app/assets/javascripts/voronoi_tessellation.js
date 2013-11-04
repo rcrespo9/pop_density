@@ -1,21 +1,28 @@
 $(function () {
-  var width = 960,
-      height = 500,
+  var width = 750,
+      height = 391,
       range = 100;
 
   $(document).on('change', 'select', function() {
     // $('body').remove()
    d3.select("svg").remove();
+   d3.select("p").remove();
+   d3.select('h1').remove();
 
     var vertices = d3.range(range).map(function(d) {
         return [Math.random() * width, Math.random() * height];
       });
 
-      range = parseInt($('#Country_name option:selected').data('density'))
-      console.log(range)
+    var name = $('#Country_name option:selected').text();
+    $('<h1>' + name + '</h1>').appendTo('#header-div');
+
+      range = parseInt($('#Country_name option:selected').data('density'));
+      $('<p>Population Density: ' + range + ' km²</p>').appendTo('#country-info');
+      console.log(range);
       vertices = d3.range(range).map(function(d) {
         return [Math.random() * width, Math.random() * height];
       });
+
 
     var voronoi = d3.geom.voronoi()
         .clipExtent([[0, 0], [width, height]]);

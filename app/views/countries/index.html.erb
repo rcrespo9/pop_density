@@ -1,12 +1,17 @@
 <body id="countries">
   <div class="container">
-
+  	  <div id="header-div">
+  	  <!-- <h1 id="countries-header">Crowded Lands</h1> -->
+  	  </div>
   	  <!-- d3 visualization -->
 	  <div id="tessellation"></div>
 	  <!-- d3 visualization end -->
 
 	  <div id="selectbox">
-	  	<%= select(:Country, :name, Country.order_by("name ASC").all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}, prompt: 'Type Country') %>
+	  	<%= select(:Country, :name, Country.order_by("name ASC").all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}, prompt: 'United States of America') %>
+	  </div>
+	  <div id="country-info">
+	  	<p id="details"></p>
 	  </div>
   </div>	  
 </body>

@@ -2,7 +2,8 @@ class CountriesController < ApplicationController
 
 	def index
 		@countries = Country.all
-		# @country = Country.find(params[:country_id])
+		@countries.collection.find(params[:id])
+		# @country = Country.find(params[:index])
 	end
 
 	# def get_density
