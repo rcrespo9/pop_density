@@ -1,14 +1,5 @@
 <body id="countries">
-	<!-- our backbone scripts -->
-	<script id="app-view-template" type="text/x-handlebars-template">
-	    <h1>Country info</h1>
-	    <ul id="country"></ul>
-  	</script>
-
-  	<script id="country-info-view-template" type="text/x-handlebars-template">
-	      {{name}}
-	      // {{pop_density}}}
-  	</script>
+	
 
   <div class="container">
 
@@ -23,8 +14,6 @@
 		  	<%= select(:Country, :name, Country.order_by("name ASC").all.collect {|p| [ p.name, p.id, { 'data-density' => p.pop_density}]}, prompt: 'Type Country') %>
 		  </div>	
 			
-			<!-- our backbone el -->
-		  <div id="country_info">Loading...</div>  
 
 </div>
 
