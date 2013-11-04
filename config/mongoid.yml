@@ -6,7 +6,7 @@ production:
   sessions:
     default:
       hosts: 
-        <%= ENV['MONGOLAB_URI'] %>
+        - <%= ENV['MONGOLAB_URI'] %>
       database: testapp_production
       username: testappuser
       password: testpassword
