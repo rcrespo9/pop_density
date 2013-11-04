@@ -17,7 +17,7 @@ $(function () {
     $('<h1>' + name + '</h1>').appendTo('#header-div');
 
       range = parseInt($('#Country_name option:selected').data('density'));
-      $('<p>Population Density: ' + range + ' km²</p>').appendTo('#country-info');
+      $('<p>Population Density: ' + range + ' people / km²</p>').appendTo('#country-info');
       console.log(range);
       vertices = d3.range(range).map(function(d) {
         return [Math.random() * width, Math.random() * height];
