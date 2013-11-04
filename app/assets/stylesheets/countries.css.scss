@@ -1,17 +1,33 @@
+@import 'home';
 
 #countries {
+	color: #333;
 	overflow: hidden;
+	font-family: $marketing-font;
 
+	#header-div {
+		text-align: center;
+      h1 {
+		font-family: $header-font;
+		font-size: 40px;
+		text-transform: uppercase;
+	}
+	}
+
+
+	/*d3 visualization*/
 	#tessellation {
-	  float: left;
-	  margin: 0 auto;
+	  height: 391px;
+	  width: 750px;
+	  margin-left: auto;
+	  margin-right: auto;
 
 	path {
   	  stroke: #fff;
 	}
 
 	path:first-child {
-  	  fill: yellow !important;
+  	  fill: #92BFAA !important;
 	}
 
 	circle {
@@ -19,43 +35,57 @@
       pointer-events: none;
 	}
 
-	.q0-9 { fill: rgb(128,128,0); }
-	.q1-9 { fill: rgb(128,0,0); }
-	.q2-9 { fill: rgb(255,140,0); }
-	.q3-9 { fill: rgb(238,232,170); }
-	.q4-9 { fill: rgb(70,130,180); }
-	.q5-9 { fill: rgb(230,245,208); }
-	.q6-9 { fill: rgb(184,225,134); }
-	.q7-9 { fill: rgb(127,188,65); }
-	.q8-9 { fill: rgb(77,146,33); }
+	.q0-9 { fill: #003540; }
+	.q1-9 { fill: #0D3F40; }
+	.q2-9 { fill: #487360; }
+	.q3-9 { fill: #8FA671; }
+	.q4-9 { fill: #F2D795; }
+	.q5-9 { fill: #003540; }
+	.q6-9 { fill: #0D3F40; }
+	.q7-9 { fill: #487360; }
+	.q8-9 { fill: #8FA671; }
 	}
+	/*d3 visualization end*/
 
+	/*select box*/
 	#selectbox {
 	  padding: 10px;
-	  background-color: #eee;
-	  border: 1px solid #ddd;
-	  position: relative;
-	  -webkit-border-radius: 2px;
-	  -moz-border-radius: 2px;
-	  -o-border-radius: 2px;
-	  border-radius: 2px;
+	  background-color:#003540;
+/*	  -moz-border-radius:16px;
+	  -webkit-border-radius:16px;
+	  border-radius:2px;*/
 	  width: 200px;
-	  float: right;
-	  margin-right: 10px;
-	}
-
-	#country_text {
-		text-transform: italic;
+	  position: absolute;
+	  top: 0;
+	  right: 0;
 	}
 
 	.ui-autocomplete {
+	  font-size: 14px;
 	  padding: 0;
 	  list-style: none;
 	  background-color: #fff;
-	  width: 218px;
+	  width: 200px;
 	  border: 1px solid #B0BECA;
 	  max-height: 350px;
 	  overflow-y: scroll;
+	}
+
+	.ui-autocomplete-input {
+	   background: url(magnifying_glass.png) no-repeat 6px 4px #fcfcfc;
+	   border: none;
+	   color: #444;
+	   font-family: $marketing-font;
+	   font-size: 13px;
+	   font-weight: bold;
+	   margin-bottom: 3px;
+	   width: 152px;
+	   padding: 6px 15px 6px 35px;
+	   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+	   -webkit-transition: all 0.7s ease 0s;
+	   -moz-transition: all 0.7s ease 0s;
+	   -o-transition: all 0.7s ease 0s;
+	   transition: all 0.7s ease 0s;
 	}
 
     .ui-autocomplete .ui-menu-item a {
@@ -74,6 +104,13 @@
       background-color: #D5E5F4;
       color: #161A1C;
 	}
+
+	#country-info {
+		text-align: center;
+		font-size: 22px;
+		font-weight: bold;
+	}
+	/*select box end*/
 }
 
 
